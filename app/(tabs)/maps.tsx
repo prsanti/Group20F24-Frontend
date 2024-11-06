@@ -9,6 +9,8 @@ import { ThemedView } from '@/components/ThemedView';
 
 import { StatusBar } from 'expo-status-bar';
 
+import MapView from 'react-native-maps';
+
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
@@ -22,6 +24,11 @@ export default function HomeScreen() {
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Maps</ThemedText>
       </ThemedView>
+
+      <ThemedView>
+        <MapView style={StyleSheet.absoluteFill} />
+      </ThemedView>
+      
       {/* <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
