@@ -48,7 +48,8 @@ export default function HomeScreen() {
       </ThemedView> */}
       <SafeAreaView style={styles.titleContainer}>
         <View>
-          <Text>Driving Score</Text>
+          {/* <Text>Driving Score</Text> */}
+          <ThemedText type="title">Driving Score</ThemedText>
         </View>
       </SafeAreaView>
     </ParallaxScrollView>

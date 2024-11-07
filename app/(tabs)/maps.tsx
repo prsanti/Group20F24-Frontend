@@ -66,7 +66,7 @@ export default function MapsScreen() {
           if (loc && loc.coords) {
             setLocation(loc);
             // print location
-            console.log(loc);
+            console.log("current loc: ", loc);
             setTripData((prevTripData) => [
               ...prevTripData,
               {
@@ -124,6 +124,12 @@ export default function MapsScreen() {
               description="You are here"
             />
           </MapView>
+          <View style={styles.coordsContainer}>
+            <Text>Latitude: {location.coords.latitude}</Text>
+            <Text>Longitude: {location.coords.longitude}</Text>
+            <Text>Speed: {location.coords.speed}</Text>
+          </View>
+
           <View style={styles.buttonContainer}>
             <Button
               title={isRecording ? 'End Trip' : 'Start Trip'}
@@ -170,5 +176,19 @@ const styles = StyleSheet.create({
     width: '35%',
     backgroundColor: 'white',
     borderRadius: 10,
+    margin: 'auto'
   },
+  coordsContainer: {
+    flex: 1,
+    position: 'absolute',
+    // bottom: 60,
+    top: 60,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '60%',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    borderRadius: 10,
+    // margin: '1%'
+  }
 });
