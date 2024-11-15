@@ -59,7 +59,7 @@ export default function MapsScreen() {
       const newSubscription = await Location.watchPositionAsync(
         {
           accuracy: Location.Accuracy.High,
-          timeInterval: 1000, // Update every second
+          timeInterval: 5000, // Update every second
           distanceInterval: 1, // Update every meter
         },
         (loc) => {
@@ -124,6 +124,7 @@ export default function MapsScreen() {
               description="You are here"
             />
           </MapView>
+          {/* Debug Purposes */}
           <View style={styles.coordsContainer}>
             <Text>Latitude: {location.coords.latitude}</Text>
             <Text>Longitude: {location.coords.longitude}</Text>
@@ -181,7 +182,6 @@ const styles = StyleSheet.create({
   coordsContainer: {
     flex: 1,
     position: 'absolute',
-    // bottom: 60,
     top: 60,
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -189,6 +189,5 @@ const styles = StyleSheet.create({
     width: '60%',
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
     borderRadius: 10,
-    // margin: '1%'
   }
 });
